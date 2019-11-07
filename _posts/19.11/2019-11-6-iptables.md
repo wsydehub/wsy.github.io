@@ -127,31 +127,41 @@ iptables -F <chain>
 # 编写规则
 
 ### -p, --protocol <u>protocol<u>
+
 The  protocol  of  the  rule  or of the packet to check.  The specified protocol can be one of tcp, udp, udplite,icmp, icmpv6,esp, ah, sctp, mh or the special keyword "all", or it can be a numeric value,  representing  one  of these  protocols or a different one.  A protocol name from /etc/protocols is also allowed.  A "!" argument beforethe protocol inverts the test.  The number zero is equivalent to all. "all" will match with all protocols and  is taken as default when this option is omitted.  Note that, in ip6tables, IPv6 extension headers except esp are not allowed.  esp and ipv6-nonext can be used with Kernel version 2.6.11 or later.  The number zero is equivalent to all, which means that you cannot test the protocol field for the value 0 directly. To match on a HBH header, even if it were the last, you cannot use -p 0, but always need -m hbh.
 
 ### -s, --source <u>address<u>[/<u>mask<u>]:[,...]
+
 Source specification. Address can be either a network name, a hostname, a network IP address (with /mask),  or  a plain  IP address. Hostnames will be resolved once only,before the rule is submitted to the kernel.  Please note that specifying any name to be resolved with a remote query such as DNS is a really bad idea.  The  mask  can  be either  an  ipv4  network mask (for iptables) or a plain number, specifying the number of 1's at the left side of the network mask.  Thus, an iptables mask of 24 is equivalent  to  255.255.255.0.   A  "!"  argument  before  the address  specification  inverts  the  sense of the address. The flag --src is an alias for this option.  Multiple addresses can be specified, but this will expand to multiple rules (when adding with -A), or will cause  multiple rules to be deleted (with -D).
 
 ### -d, --destination <u>address<u>[/<u>mask<u>]:[,...]
+
 Destination specification.  See the description of the -s (source) flag for a detailed description of the syntax. The flag --dst is an alias for this option.
 
 ### -m, --match <u>match<u>
+
 Specifies a match to use, that is, an extension module that tests for a specific property.  The  set  of  matches make  up  the  condition under which a target is invoked. Matches are evaluated first to last as specified on the command line and work in short-circuit fashion, i.e. if one extension yields false, evaluation will stop.
 
 ### -j, --jump <u>target<u>
+
 This specifies the target of the rule; i.e., what to do if the packet matches it.  The  target  can  be  a  user-defined  chain  (other than the one this rule is in), one of the special builtin targets which decide the fate of the packet immediately, or an extension (see EXTENSIONS below).  If this option is omitted in a rule (and  -g  is not  used), then matching the rule will have no effect on the packet's fate, but the counters on the rule will be incremented.
 
 ### -g, --goto <u>chain<u>
+
 This specifies that the processing should continue in a user specified chain. Unlike the  --jump  option  return will not continue processing in this chain but instead in the chain that called us via --jump.
 
 ### -i, --in-interface <u>name<u>
+
 Name of an interface via which a packet was received (only for packets entering the INPUT, FORWARD and PREROUTING chains).  When the "!" argument is used before the interface name, the sense is inverted.  If the interface  name ends  in a "+", then any interface which begins with this name will match.  If this option is omitted, any interface name will match.
 
 ### -o, --out-interface <u>name<u>
-Name of an interface via which a packet is going to be  sent  (for  packets entering  the  FORWARD,  OUTPUT  and POSTROUTING  chains).   When  the  "!" argument is used before the interface name, the sense is inverted.  If the interface name ends in a "+", then any interface which begins with this name will match.  If this option is omitted, any interface name will match.
+
+Name of an interface via which a packet is going to be  sent  (for  packets entering the  FORWARD,  OUTPUT  and POSTROUTING  chains).   When  the  "!" argument is used before the interface name, the sense is inverted.  If the interface name ends in a "+", then any interface which begins with this name will match.  If this option is omitted, any interface name will match.
 
 ### -f, --fragment
+
 This  means that the rule only refers to second and further IPv4 fragments of fragmented packets.  Since there is no way to tell the source or destination ports of such a packet (or ICMP type), such a packet will not match  any rules which specify them.  When the "!" argument precedes the "-f" flag, the rule will only match head fragments, or unfragmented packets. This option is IPv4 specific, it is not available in ip6tables.
 
 ### -c, --set-counters <u>packets<u> <u>bytes<u>
+
 This enables the administrator to initialize the packet and byte counters  of  a  rule  (during  INSERT,  APPEND, REPLACE operations).

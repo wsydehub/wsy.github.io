@@ -156,6 +156,7 @@ Name of an interface via which a packet was received (only for packets entering 
 
 ### -o, --out-interface <u>name<u>
 
+
 Name of an interface via which a packet is going to be  sent  (for  packets entering the  FORWARD,  OUTPUT  and POSTROUTING  chains).   When  the  "!" argument is used before the interface name, the sense is inverted.  If the interface name ends in a "+", then any interface which begins with this name will match.  If this option is omitted, any interface name will match.
 
 ### -f, --fragment

@@ -3,7 +3,7 @@ title: dsyzxml's Blog
 SEOTitle: dsyzxml的博客 | dsyzxml Blog
 header-img: img/home-bg.jpeg
 email: sirwusenyang@icloud.com
-description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
+description: "dsyzxml's porsonal blog"
 keyword: ""
 url: "https://wsydehub.github.io"              # your host, for absolute URL
 baseurl: "/wsy.github.io"                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -79,7 +79,7 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "A bored man ^*^"
-sidebar-avatar: /wsy.github.io/img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /wsy.github.io/img/avatar-wsy.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
